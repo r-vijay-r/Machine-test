@@ -1,6 +1,12 @@
 # Ng1828
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8. 
+
+## Purpose
+Angular Material CDK Dynamic Draggable.
+
+## Live Preview
+[Click Here](https://r-vijay-r.github.io/Machine-test/)
 
 ## Development server
 
