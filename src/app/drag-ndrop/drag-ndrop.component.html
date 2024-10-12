@@ -22,12 +22,24 @@
 				  [cdkDropListData]="data[i]"
 				  cdkDropListOrientation="horizontal"
 				  class="example-list"
-				  (cdkDropListDropped)="drop($event)">
+				  (cdkDropListDropped)="drop($event)"
+				  (cdkDropListEntered)="toggleNewArea(true)" 
+				  (cdkDropListExited)="toggleNewArea(false)">
 				  @for (item of row; track item) {
-					<div class="example-box" cdkDrag>{{item}}</div>
-				  }
+					  <div class="example-box" cdkDrag (cdkDragStarted)="toggleNewArea(true)" >{{item}}</div>
+					}
 				</div>
 			}
+			<div 
+				[class.disnone]="!showNewArea"
+				cdkDropList
+				#newDropArea
+				[cdkDropListData]="newdata"
+				cdkDropListOrientation="horizontal"
+				class="example-list"
+				(cdkDropListDropped)="newrowdrop($event)"
+				(cdkDropListEntered)="toggleNewArea(true)" 
+				(cdkDropListExited)="toggleNewArea(false)"></div>
 		</div>
 	</div>
 </div>

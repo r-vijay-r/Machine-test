@@ -4,13 +4,17 @@
 .example-list {
     width: 100%;
     max-width: 100%;
-    // border: solid 1px #ccc;
     min-height: 60px;
     display: flex;
     flex-direction: row;
-    // background: white;
     border-radius: 4px;
     overflow: hidden;
+}
+.disnone{
+    display: none;
+}
+.example-list:hover {
+    box-shadow: inset 0 0 60px 0 #fff;
 }
 .example-list.drop-zone{
     background: transparent;
