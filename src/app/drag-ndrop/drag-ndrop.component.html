@@ -1,0 +1,32 @@
+<div class="example-container">
+	<h4>Droppable area 1</h4>
+	<div
+	  cdkDropList
+	  #todoList="cdkDropList"
+	  [cdkDropListData]="boxcontents1"
+	  [cdkDropListConnectedTo]="[doneList]"
+	  cdkDropListOrientation="horizontal"
+	  class="example-list"
+	  (cdkDropListDropped)="drop($event)">
+	  @for (item of boxcontents1; track item) {
+		<div class="example-box" cdkDrag>{{item}}</div>
+	  }
+	</div>
+  </div>
+  
+  <div class="example-container">
+	<h4>Droppable area 2</h4>
+  
+	<div
+	  cdkDropList
+	  #doneList="cdkDropList"
+	  [cdkDropListData]="boxcontents2"
+	  [cdkDropListConnectedTo]="[todoList]"
+	  cdkDropListOrientation="mixed"
+	  class="example-list"
+	  (cdkDropListDropped)="drop($event)">
+	  @for (item of boxcontents2; track item) {
+		<div class="example-box" cdkDrag>{{item}}</div>
+	  }
+	</div>
+  </div>
