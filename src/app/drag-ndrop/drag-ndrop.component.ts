@@ -23,7 +23,7 @@ export class DragNdropComponent {
   toggleNewArea(visible:boolean){
     this.showNewArea=visible;
   }
-  insideNewArea (b:any, x:number, y:number) {
+  private insideNewArea (b:any, x:number, y:number) {
       return b.offsetLeft <= x && x <= b.offsetLeft + b.offsetWidth && b.offsetTop <= y && y <= b.offsetTop + b.offsetHeight;
   }
   drop(event: CdkDragDrop<string[]>) {
