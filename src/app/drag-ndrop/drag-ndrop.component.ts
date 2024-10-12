@@ -5,18 +5,18 @@ import {
   transferArrayItem,
   CdkDrag,
   CdkDropList,
+  CdkDropListGroup,
 } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'drag-n-drop',
   standalone: true,
-  imports: [CdkDropList, CdkDrag],
+  imports: [CdkDropList, CdkDrag, CdkDropListGroup],
   templateUrl: './drag-ndrop.component.html',
   styleUrl: './drag-ndrop.component.scss'
 })
 export class DragNdropComponent {
-  boxcontents1 = ['1', '2', '3', '4'];
-
-  boxcontents2 = ['5', '6', '7', '8', '9'];
+  data = [['1', '2', '3', '4'],['5', '6', '7', '8', '9']];
+  boxcontents1 = ['10','11','12'];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
