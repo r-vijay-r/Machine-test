@@ -18,7 +18,6 @@ export class DragNdropComponent {
   @ViewChild('newDropArea',{static:false}) newDropArea: ElementRef = new ElementRef(HTMLElement);
   data:string[][] = [['1', '2', '3', '4'],['5', '6', '7', '8', '9']];
   boxcontents1:string[] = ['10','11','12'];
-  newdata:string[] = [];
   showNewArea=false;
   toggleNewArea(visible:boolean){
     this.showNewArea=visible;
@@ -49,16 +48,14 @@ export class DragNdropComponent {
   }
   newrowdrop(event: CdkDragDrop<string[]>){
     this.toggleNewArea(false);
+    let l = this.data.length;
+    this.data[l]=[];
     transferArrayItem(
       event.previousContainer.data,
-      this.newdata,
+      this.data[l],
       event.previousIndex,
       event.currentIndex,
     );
-    if (this.newdata.length>0) {
-      this.data.push(JSON.parse(JSON.stringify(this.newdata)));
-      this.newdata=[];
-    }
     this.data = this.data.filter((e)=>{
       return e.length>0;
     });
